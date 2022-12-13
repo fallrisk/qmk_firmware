@@ -3290,6 +3290,28 @@ bool process_record_backlight(uint16_t keycode, keyrecord_t *record)
             }
             return false;
             break;
+        case EF_OFF:
+            if (record->event.pressed)
+            {
+                g_config.effect = 0;
+                backlight_config_save();
+                break;
+            }
+            return false;
+            break;
+        case EF_ONP:
+            if (record->event.pressed)
+            {
+                g_config.effect = 1;
+                // #773fc0
+                g_config.color_1.h = 185;
+                g_config.color_1.s = 150;
+                g_config.brightness = 92;
+                backlight_config_save();
+                break;
+            }
+            return false;
+            break;
     }
 
     return true;

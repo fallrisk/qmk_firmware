@@ -30,5 +30,7 @@ enum wt_rgb_backlight_keycodes {
 	H2_INC,
 	H2_DEC,
 	S2_INC,
-	S2_DEC
+	S2_DEC,
+	EF_OFF,             // effect off
+	EF_ONP              // effect on, straight purple
 };
